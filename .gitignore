@@ -1,0 +1,21 @@
+# Build output
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# STM32CubeIDE / Eclipse
+.settings/
+*.launch
+.cproject_org
+.project_org
+factory_io_demo_converter.log
+
+# IDE metadata
+*.bak
+*.tmp
