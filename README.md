@@ -1,4 +1,4 @@
-# 🏭 STM32 PAL — Factory Automation with FreeRTOS
+#  STM32 PAL — Factory avec FreeRTOS
 
 > Système de palettisation automatisée piloté par un STM32F072 avec FreeRTOS, communiquant avec FactoryIO via UART/DMA.
 
