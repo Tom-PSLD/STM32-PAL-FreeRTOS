@@ -11,16 +11,16 @@
 Ce projet implémente le contrôle d'une ligne de palettisation simulée dans **FactoryIO**, depuis une carte **STM32F072RB**. La communication entre la carte et le PC passe par un lien **UART série** (115200 bauds) via un script Python (`bridge.py`) utilisant pyserial et pythonnet.
 ```mermaid
 graph LR
-    STM32["🎛️ STM32F072RB\nFreeRTOS"]
-    BRIDGE["🐍 bridge.py\npyserial + pythonnet"]
-    FACTORY["🏭 FactoryIO\nScène PAL"]
+    STM32["STM32F072RB\nFreeRTOS"]
+    BRIDGE[" bridge.py\npyserial + pythonnet"]
+    FACTORY[" FactoryIO\nScène PAL"]
     STM32 <-->|"UART 115200 bds\n8 octets / trame"| BRIDGE
     BRIDGE <-->|"SDK EngineIO"| FACTORY
 ```
 
 ---
 
-## 🔌 Protocole de Communication
+##  Protocole de Communication
 
 Les trames UART font **8 octets** au format suivant :
 
@@ -35,17 +35,17 @@ Les signaux sont encodés en **LSB→MSB** sur 4 octets, permettant d'adresser j
 
 ---
 
-## ⚙️ Architecture FreeRTOS
+##  Architecture FreeRTOS
 
 Le système utilise **6 tâches FreeRTOS** synchronisées par sémaphores et files de messages.
 ```mermaid
 graph TD
-    READ["📡 Task_Read\nprio 6\nDécode capteurs UART RX"]
-    WRITE["📤 Task_Write\nprio 5\nEnvoie actionneurs UART TX"]
-    CONV["🔄 Task_Conv_carton\nprio 3\nConvoyeur + distribution"]
-    CARTON["📦 Task_chargement_carton\nprio 3\n3 cartons par couche"]
-    ELEV["🔼 Task_ascenseur\nprio 3\nMontée / Descente"]
-    PAL["🏗️ Task_chargement_palette\nprio 4\nEntrée / Sortie palette"]
+    READ[" Task_Read\nprio 6\nDécode capteurs UART RX"]
+    WRITE[" Task_Write\nprio 5\nEnvoie actionneurs UART TX"]
+    CONV[" Task_Conv_carton\nprio 3\nConvoyeur + distribution"]
+    CARTON[" Task_chargement_carton\nprio 3\n3 cartons par couche"]
+    ELEV[" Task_ascenseur\nprio 3\nMontée / Descente"]
+    PAL[" Task_chargement_palette\nprio 4\nEntrée / Sortie palette"]
 
     READ -->|"xSem1"| CONV
     READ -->|"xSem2"| CARTON
@@ -140,7 +140,7 @@ STM32-PAL-FreeRTOS/
 
 ---
 
-## 🚀 Utilisation
+## Utilisation
 
 ### Prérequis
 
