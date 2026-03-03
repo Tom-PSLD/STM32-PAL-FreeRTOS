@@ -170,3 +170,9 @@ Ouvrir la scène PAL dans FactoryIO et démarrer la simulation.
 
 **Tom Penfornis** — Polytech Montpellier  
 SE 2024-2027
+
+---
+
+## 🎬 Démonstration
+
+https://github.com/user-attachments/assets/634019d8-b187-4560-9aa4-4dbb82d54fb9
